@@ -14,6 +14,7 @@
     border: 1px black solid;
     width: 2rem;
     height: 2rem;
+    transition: all 250ms;
 }
 
 /* .c {

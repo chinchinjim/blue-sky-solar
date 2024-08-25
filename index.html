@@ -7,482 +7,493 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div class="outer">
+    <h1 style="text-align: center">Select a tile!</h1>
+    <div class="outer" onclick="tileClicked(event)">
 
       <div style="grid-column: 1 / 2; background-color: red;">
-        <div class="cell p1"></div>
+        <div class="cell" id="p1"></div>
       </div>
       
       <div style="grid-column: 2 / 3; background-color: orangered;">
-        <div class="cell p2 c2 r4"></div>
-        <div class="cell p3 c2 r5"></div>
-        <div class="cell p4 c2 r6"  style="background-color: red";></div>
-        <div class="cell p5 c2 r7"></div>
-        <div class="cell p6 c2 r8"></div>
+        <div class="cell" id="p2"></div>
+        <div class="cell" id="p3"></div>
+        <div class="cell" id="p4"  style="background-color: red";></div>
+        <div class="cell" id="p5"></div>
+        <div class="cell" id="p6"></div>
       </div>
       
       <div style="grid-column: 3 / 4; background-color: orange;">
-        <div class="cell p7"></div>
-        <div class="cell p8"></div>
-        <div class="cell p9"></div>
-        <div class="cell p10"></div>
-        <div class="cell p11"></div>
-        <div class="cell p12"></div>
-        <div class="cell p13"></div>
+        <div class="cell" id="p7"></div>
+        <div class="cell" id="p8"></div>
+        <div class="cell" id="p9"></div>
+        <div class="cell" id="p10"></div>
+        <div class="cell" id="p11"></div>
+        <div class="cell" id="p12"></div>
+        <div class="cell" id="p13"></div>
       </div>
 
       <div style="grid-column: 4 / 5; background-color: orange;">
-        <div class="cell p14"></div>
-        <div class="cell p15"></div>
-        <div class="cell p16"></div>
-        <div class="cell p17"></div>
-        <div class="cell p18"></div>
-        <div class="cell p19"></div>
-        <div class="cell p20"></div>
+        <div class="cell" id="p14"></div>
+        <div class="cell" id="p15"></div>
+        <div class="cell" id="p16"></div>
+        <div class="cell" id="p17"></div>
+        <div class="cell" id="p18"></div>
+        <div class="cell" id="p19"></div>
+        <div class="cell" id="p20"></div>
       </div>
 
       <div style="grid-column: 5 / 6; background-color: orange;">
-        <div class="cell p21"></div>
-        <div class="cell p22"></div>
-        <div class="cell p23"></div>
-        <div class="cell p24"></div>
-        <div class="cell p25"></div>
-        <div class="cell p26"></div>
-        <div class="cell p27"></div>
-        <div class="cell p28"></div>
-        <div class="cell p29"></div>
+        <div class="cell" id="p21"></div>
+        <div class="cell" id="p22"></div>
+        <div class="cell" id="p23"></div>
+        <div class="cell" id="p24"></div>
+        <div class="cell" id="p25"></div>
+        <div class="cell" id="p26"></div>
+        <div class="cell" id="p27"></div>
+        <div class="cell" id="p28"></div>
+        <div class="cell" id="p29"></div>
       </div>
 
       <div style="grid-column: 6 / 7; background-color: yellow;">
-        <div class="cell p30"></div>
-        <div class="cell p31"></div>
-        <div class="cell p32"></div>
-        <div class="cell p33"></div>
-        <div class="cell p34"></div>
-        <div class="cell p35"></div>
-        <div class="cell p36"></div>
-        <div class="cell p37"></div>
-        <div class="cell p38"></div>
-        <div class="cell p39"></div>
+        <div class="cell" id="p30"></div>
+        <div class="cell" id="p31"></div>
+        <div class="cell" id="p32"></div>
+        <div class="cell" id="p33"></div>
+        <div class="cell" id="p34"></div>
+        <div class="cell" id="p35"></div>
+        <div class="cell" id="p36"></div>
+        <div class="cell" id="p37"></div>
+        <div class="cell" id="p38"></div>
+        <div class="cell" id="p39"></div>
       </div>
 
       <div style="grid-column: 7 / 8; background-color: yellow;">
-        <div class="cell p40"></div>
-        <div class="cell p41"></div>
-        <div class="cell p42"></div>
-        <div class="cell p43"></div>
-        <div class="cell p44"></div>
-        <div class="cell p45"></div>
-        <div class="cell p46"></div>
-        <div class="cell p47"></div>
-        <div class="cell p48"></div>
-       <div class="cell p49"></div>
+        <div class="cell" id="p40"></div>
+        <div class="cell" id="p41"></div>
+        <div class="cell" id="p42"></div>
+        <div class="cell" id="p43"></div>
+        <div class="cell" id="p44"></div>
+        <div class="cell" id="p45"></div>
+        <div class="cell" id="p46"></div>
+        <div class="cell" id="p47"></div>
+        <div class="cell" id="p48"></div>
+       <div class="cell" id="p49"></div>
       </div>
 
     <div style="grid-column: 8 / 9; background-color: yellow;">
-      <div class="cell p50"></div>
-      <div class="cell p51"></div>
-      <div class="cell p52"></div>
-      <div class="cell p53"></div>
-      <div class="cell p54"></div>
-      <div class="cell p55"></div>
-      <div class="cell p56"></div>
-      <div class="cell p57"></div>
-      <div class="cell p58"></div>
-      <div class="cell p59"></div>
+      <div class="cell" id="p50"></div>
+      <div class="cell" id="p51"></div>
+      <div class="cell" id="p52"></div>
+      <div class="cell" id="p53"></div>
+      <div class="cell" id="p54"></div>
+      <div class="cell" id="p55"></div>
+      <div class="cell" id="p56"></div>
+      <div class="cell" id="p57"></div>
+      <div class="cell" id="p58"></div>
+      <div class="cell" id="p59"></div>
     </div>
 
    <div style="grid-column: 9 / 10; background-color: lime;">
-      <div class="cell p60"></div>
-      <div class="cell p61"></div>
-      <div class="cell p62"></div>
-      <div class="cell p63"></div>
-      <div class="cell p64"></div>
-      <div class="cell p65"></div>
-      <div class="cell p66"></div>
-      <div class="cell p67"></div>
-      <div class="cell p68"></div>
-      <div class="cell p69"></div>
-      <div class="cell p70"></div>
+      <div class="cell" id="p60"></div>
+      <div class="cell" id="p61"></div>
+      <div class="cell" id="p62"></div>
+      <div class="cell" id="p63"></div>
+      <div class="cell" id="p64"></div>
+      <div class="cell" id="p65"></div>
+      <div class="cell" id="p66"></div>
+      <div class="cell" id="p67"></div>
+      <div class="cell" id="p68"></div>
+      <div class="cell" id="p69"></div>
+      <div class="cell" id="p70"></div>
     </div>
 
     <div style="grid-column: 10 / 11; background-color: lime;">
-      <div class="cell p71"></div>
-      <div class="cell p72"></div>
-      <div class="cell p73"></div>
-      <div class="cell p74"></div>
-      <div class="cell p75"></div>
-      <div class="cell p76"></div>
-      <div class="cell p77"></div>
-      <div class="cell p78"></div>
-      <div class="cell p79"></div>
-      <div class="cell p80"></div>
-      <div class="cell p81"></div> 
+      <div class="cell" id="p71"></div>
+      <div class="cell" id="p72"></div>
+      <div class="cell" id="p73"></div>
+      <div class="cell" id="p74"></div>
+      <div class="cell" id="p75"></div>
+      <div class="cell" id="p76"></div>
+      <div class="cell" id="p77"></div>
+      <div class="cell" id="p78"></div>
+      <div class="cell" id="p79"></div>
+      <div class="cell" id="p80"></div>
+      <div class="cell" id="p81"></div> 
     </div>
       
     <div style="grid-column: 11 / 12; background-color: lime;">
-      <div class="cell p82"></div>
-      <div class="cell p83"></div>
-      <div class="cell p84"></div>
-      <div class="cell p85"></div>
-      <div class="cell p86"></div>
-      <div class="cell p87"></div>
-      <div class="cell p88"></div>
-      <div class="cell p89"></div>
-      <div class="cell p90"></div>
-      <div class="cell p91"></div>
-      <div class="cell p92"></div>
+      <div class="cell" id="p82"></div>
+      <div class="cell" id="p83"></div>
+      <div class="cell" id="p84"></div>
+      <div class="cell" id="p85"></div>
+      <div class="cell" id="p86"></div>
+      <div class="cell" id="p87"></div>
+      <div class="cell" id="p88"></div>
+      <div class="cell" id="p89"></div>
+      <div class="cell" id="p90"></div>
+      <div class="cell" id="p91"></div>
+      <div class="cell" id="p92"></div>
     </div>
 
     <div style="grid-column: 12 / 13; background-color: lime;">
-      <div class="cell p93"></div>
-      <div class="cell p94"></div>
-      <div class="cell p95"></div>
-      <div class="cell p96"></div>
-      <div class="cell p97"></div>
-      <div class="cell p98"></div>
-      <div class="cell p99"></div>
-      <div class="cell p100"></div>
-      <div class="cell p101"></div>
-      <div class="cell p102"></div>
-      <div class="cell p103"></div>
+      <div class="cell" id="p93"></div>
+      <div class="cell" id="p94"></div>
+      <div class="cell" id="p95"></div>
+      <div class="cell" id="p96"></div>
+      <div class="cell" id="p97"></div>
+      <div class="cell" id="p98"></div>
+      <div class="cell" id="p99"></div>
+      <div class="cell" id="p100"></div>
+      <div class="cell" id="p101"></div>
+      <div class="cell" id="p102"></div>
+      <div class="cell" id="p103"></div>
     </div>
 
     <div style="grid-column: 13 / 14; background-color: lime;">
-      <div class="cell p104"></div>
-      <div class="cell p105"></div>
-      <div class="cell p106"></div>
-      <div class="cell p107"></div>
-      <div class="cell p108"></div>
-      <div class="cell p109"></div>
-      <div class="cell p110"></div>
-      <div class="cell p111"></div>
-      <div class="cell p112"></div>
-      <div class="cell p113"></div>
-      <div class="cell p114"></div>
+      <div class="cell" id="p104"></div>
+      <div class="cell" id="p105"></div>
+      <div class="cell" id="p106"></div>
+      <div class="cell" id="p107"></div>
+      <div class="cell" id="p108"></div>
+      <div class="cell" id="p109"></div>
+      <div class="cell" id="p110"></div>
+      <div class="cell" id="p111"></div>
+      <div class="cell" id="p112"></div>
+      <div class="cell" id="p113"></div>
+      <div class="cell" id="p114"></div>
     </div>
 
     <div style="grid-column: 14 / 15; background-color: lime;">
-      <div class="cell p115"></div>
-      <div class="cell p116"></div>
-      <div class="cell p117"></div>
-      <div class="cell p118"></div>
-      <div class="cell p119"></div>
-      <div class="cell p120"></div>
-      <div class="cell p121"></div>
-      <div class="cell p122"></div>
-      <div class="cell p123"></div>
-      <div class="cell p124"></div>
-      <div class="cell p125"></div>
+      <div class="cell" id="p115"></div>
+      <div class="cell" id="p116"></div>
+      <div class="cell" id="p117"></div>
+      <div class="cell" id="p118"></div>
+      <div class="cell" id="p119"></div>
+      <div class="cell" id="p120"></div>
+      <div class="cell" id="p121"></div>
+      <div class="cell" id="p122"></div>
+      <div class="cell" id="p123"></div>
+      <div class="cell" id="p124"></div>
+      <div class="cell" id="p125"></div>
     </div>
       
     <div style="grid-column: 15 / 16; background-color: lime;">
-      <div class="cell p126"></div>
-      <div class="cell p127"></div>
-      <div class="cell p128"></div>
-      <div class="cell p129"></div>
-      <div class="cell p130"></div>
-      <div class="cell p131"></div>
-      <div class="cell p132"></div>
-      <div class="cell p133"></div>
-      <div class="cell p134"></div>
-      <div class="cell p135"></div>
-      <div class="cell p136"></div>
+      <div class="cell" id="p126"></div>
+      <div class="cell" id="p127"></div>
+      <div class="cell" id="p128"></div>
+      <div class="cell" id="p129"></div>
+      <div class="cell" id="p130"></div>
+      <div class="cell" id="p131"></div>
+      <div class="cell" id="p132"></div>
+      <div class="cell" id="p133"></div>
+      <div class="cell" id="p134"></div>
+      <div class="cell" id="p135"></div>
+      <div class="cell" id="p136"></div>
     </div>
 
     <div style="grid-column: 16 / 17; background-color: green;">
-      <div class="cell p137"></div>
-      <div class="cell p138"></div>
-      <div class="cell p139"></div>
-      <div class="cell p140"></div>
-      <div class="cell p141"></div>
-      <div class="cell p142"></div>
-      <div class="cell p143"></div>
-      <div class="cell p144"></div>
-      <div class="cell p145"></div>
-      <div class="cell p146"></div>
-      <div class="cell p147"></div>
+      <div class="cell" id="p137"></div>
+      <div class="cell" id="p138"></div>
+      <div class="cell" id="p139"></div>
+      <div class="cell" id="p140"></div>
+      <div class="cell" id="p141"></div>
+      <div class="cell" id="p142"></div>
+      <div class="cell" id="p143"></div>
+      <div class="cell" id="p144"></div>
+      <div class="cell" id="p145"></div>
+      <div class="cell" id="p146"></div>
+      <div class="cell" id="p147"></div>
     </div>
 
     <div style="grid-column: 17 / 18; background-color: green;">
-      <div class="cell p148"></div>
-      <div class="cell p149"></div>
-      <div class="cell p150"></div>
-      <div class="cell p151"></div>
-      <div class="cell p152"></div>
-      <div class="cell p153"></div>
-      <div class="cell p154"></div>
-      <div class="cell p155"></div>
-      <div class="cell p156"></div>
-      <div class="cell p157"></div>
-      <div class="cell p158"></div>
+      <div class="cell" id="p148"></div>
+      <div class="cell" id="p149"></div>
+      <div class="cell" id="p150"></div>
+      <div class="cell" id="p151"></div>
+      <div class="cell" id="p152"></div>
+      <div class="cell" id="p153"></div>
+      <div class="cell" id="p154"></div>
+      <div class="cell" id="p155"></div>
+      <div class="cell" id="p156"></div>
+      <div class="cell" id="p157"></div>
+      <div class="cell" id="p158"></div>
     </div>
 
     <div style="grid-column: 18 / 19; background-color: teal;">
-      <div class="cell p159"></div>
-      <div class="cell p160"></div>
-      <div class="cell p161"></div>
-      <div class="cell p162"></div>
-      <div class="cell p163"></div>
-      <div class="cell p164"></div>
-      <div class="cell p165"></div>
-      <div class="cell p166"></div>
-      <div class="cell p167"></div>
-      <div class="cell p168"></div>
-      <div class="cell p169"></div>
+      <div class="cell" id="p159"></div>
+      <div class="cell" id="p160"></div>
+      <div class="cell" id="p161"></div>
+      <div class="cell" id="p162"></div>
+      <div class="cell" id="p163"></div>
+      <div class="cell" id="p164"></div>
+      <div class="cell" id="p165"></div>
+      <div class="cell" id="p166"></div>
+      <div class="cell" id="p167"></div>
+      <div class="cell" id="p168"></div>
+      <div class="cell" id="p169"></div>
     </div>
 
     <div style="grid-column: 19 / 20; background-color: teal;">
-      <div class="cell p170"></div>
-      <div class="cell p171"></div>
-      <div class="cell p172"></div>
-      <div class="cell p173"></div>
-      <div class="cell p174"></div>
-      <div class="cell p175"></div>
-      <div class="cell p176"></div>
-      <div class="cell p177"></div>
-      <div class="cell p178"></div>
-      <div class="cell p179"></div>
-      <div class="cell p180"></div>
+      <div class="cell" id="p170"></div>
+      <div class="cell" id="p171"></div>
+      <div class="cell" id="p172"></div>
+      <div class="cell" id="p173"></div>
+      <div class="cell" id="p174"></div>
+      <div class="cell" id="p175"></div>
+      <div class="cell" id="p176"></div>
+      <div class="cell" id="p177"></div>
+      <div class="cell" id="p178"></div>
+      <div class="cell" id="p179"></div>
+      <div class="cell" id="p180"></div>
     </div>
 
     <div style="grid-column: 20 / 21; background-color: teal;">
-      <div class="cell p181"></div>
-      <div class="cell p182"></div>
-      <div class="cell p183"></div>
-      <div class="cell p184"></div>
-      <div class="cell p185"></div>
-      <div class="cell p186"></div>
-      <div class="cell p187"></div>
-      <div class="cell p188"></div>
-      <div class="cell p189"></div>
-      <div class="cell p190"></div>
-      <div class="cell p191"></div>
+      <div class="cell" id="p181"></div>
+      <div class="cell" id="p182"></div>
+      <div class="cell" id="p183"></div>
+      <div class="cell" id="p184"></div>
+      <div class="cell" id="p185"></div>
+      <div class="cell" id="p186"></div>
+      <div class="cell" id="p187"></div>
+      <div class="cell" id="p188"></div>
+      <div class="cell" id="p189"></div>
+      <div class="cell" id="p190"></div>
+      <div class="cell" id="p191"></div>
     </div>
 
     <div style="grid-column: 21 / 22; background-color: teal;">
-      <div class="cell p192"></div>
-      <div class="cell p193"></div>
-      <div class="cell p194"></div>
-      <div class="cell p195"></div>
-      <div class="cell p196"></div>
-      <div class="cell p197"></div>
-      <div class="cell p198"></div>
-      <div class="cell p199"></div>
-      <div class="cell p200"></div>
-      <div class="cell p201"></div>
-      <div class="cell p202"></div>
+      <div class="cell" id="p192"></div>
+      <div class="cell" id="p193"></div>
+      <div class="cell" id="p194"></div>
+      <div class="cell" id="p195"></div>
+      <div class="cell" id="p196"></div>
+      <div class="cell" id="p197"></div>
+      <div class="cell" id="p198"></div>
+      <div class="cell" id="p199"></div>
+      <div class="cell" id="p200"></div>
+      <div class="cell" id="p201"></div>
+      <div class="cell" id="p202"></div>
     </div>
 
     <div style="grid-column: 22 / 23; background-color: turquoise;">
-      <div class="cell p203"></div>
-      <div class="cell p204"></div>
-      <div class="cell p205"></div>
-      <div class="cell p206"></div>
-      <div class="cell p207"></div>
-      <div class="cell p208"></div>
-      <div class="cell p209"></div>
-      <div class="cell p210"></div>
-      <div class="cell p211"></div>
-      <div class="cell p212"></div>
-      <div class="cell p213"></div>
+      <div class="cell" id="p203"></div>
+      <div class="cell" id="p204"></div>
+      <div class="cell" id="p205"></div>
+      <div class="cell" id="p206"></div>
+      <div class="cell" id="p207"></div>
+      <div class="cell" id="p208"></div>
+      <div class="cell" id="p209"></div>
+      <div class="cell" id="p210"></div>
+      <div class="cell" id="p211"></div>
+      <div class="cell" id="p212"></div>
+      <div class="cell" id="p213"></div>
     </div>
 
     <div style="grid-column: 23 / 24; background-color: turquoise;">
-      <div class="cell p214"></div>
-      <div class="cell p215"></div>
-      <div class="cell p216"></div>
-      <div class="cell p217"></div>
-      <div class="cell p218"></div>
-      <div class="cell p219"></div>
-      <div class="cell p220"></div>
-      <div class="cell p221"></div>
-      <div class="cell p222"></div>
-      <div class="cell p223"></div>
-      <div class="cell p224"></div>
+      <div class="cell" id="p214"></div>
+      <div class="cell" id="p215"></div>
+      <div class="cell" id="p216"></div>
+      <div class="cell" id="p217"></div>
+      <div class="cell" id="p218"></div>
+      <div class="cell" id="p219"></div>
+      <div class="cell" id="p220"></div>
+      <div class="cell" id="p221"></div>
+      <div class="cell" id="p222"></div>
+      <div class="cell" id="p223"></div>
+      <div class="cell" id="p224"></div>
     </div>
 
     <div style="grid-column: 24 / 25; background-color: turquoise;">
-      <div class="cell p225"></div>
-      <div class="cell p226"></div>
-      <div class="cell p227"></div>
-      <div class="cell p228"></div>
-      <div class="cell p229"></div>
-      <div class="cell p230"></div>
-      <div class="cell p231"></div>
-      <div class="cell p232"></div>
-      <div class="cell p233"></div>
-      <div class="cell p234"></div>
-      <div class="cell p235"></div>
+      <div class="cell" id="p225"></div>
+      <div class="cell" id="p226"></div>
+      <div class="cell" id="p227"></div>
+      <div class="cell" id="p228"></div>
+      <div class="cell" id="p229"></div>
+      <div class="cell" id="p230"></div>
+      <div class="cell" id="p231"></div>
+      <div class="cell" id="p232"></div>
+      <div class="cell" id="p233"></div>
+      <div class="cell" id="p234"></div>
+      <div class="cell" id="p235"></div>
     </div>
 
     <div style="grid-column: 25 / 26; background-color: lavender;">
-      <div class="cell p236"></div>
-      <div class="cell p237"></div>
-      <div class="cell p238"></div>
-      <div class="cell p239"></div>
-      <div class="cell p240"></div>
-      <div class="cell p241"></div>
-      <div class="cell p242"></div>
-      <div class="cell p243"></div>
-      <div class="cell p244"></div>
-      <div class="cell p245"></div>
-      <div class="cell p246"></div>
+      <div class="cell" id="p236"></div>
+      <div class="cell" id="p237"></div>
+      <div class="cell" id="p238"></div>
+      <div class="cell" id="p239"></div>
+      <div class="cell" id="p240"></div>
+      <div class="cell" id="p241"></div>
+      <div class="cell" id="p242"></div>
+      <div class="cell" id="p243"></div>
+      <div class="cell" id="p244"></div>
+      <div class="cell" id="p245"></div>
+      <div class="cell" id="p246"></div>
     </div>
 
     <div style="grid-column: 26 / 27; background-color: lavender;">
-      <div class="cell p247"></div>
-      <div class="cell p248"></div>
-      <div class="cell p249"></div>
-      <div class="cell p250"></div>
-      <div class="cell p251"></div>
-      <div class="cell p252"></div>
-      <div class="cell p253"></div>
-      <div class="cell p254"></div>
-      <div class="cell p255"></div>
-      <div class="cell p256"></div>
-      <div class="cell p257"></div>
+      <div class="cell" id="p247"></div>
+      <div class="cell" id="p248"></div>
+      <div class="cell" id="p249"></div>
+      <div class="cell" id="p250"></div>
+      <div class="cell" id="p251"></div>
+      <div class="cell" id="p252"></div>
+      <div class="cell" id="p253"></div>
+      <div class="cell" id="p254"></div>
+      <div class="cell" id="p255"></div>
+      <div class="cell" id="p256"></div>
+      <div class="cell" id="p257"></div>
     </div>
 
     <div style="grid-column: 27 / 28; background-color: lavender;">
-      <div class="cell p258"></div>
-      <div class="cell p259"></div>
-      <div class="cell p260"></div>
-      <div class="cell p261"></div>
-      <div class="cell p262"></div>
-      <div class="cell p263"></div>
-      <div class="cell p264"></div>
-      <div class="cell p265"></div>
-      <div class="cell p266"></div>
-      <div class="cell p267"></div>
-      <div class="cell p268"></div>
+      <div class="cell" id="p258"></div>
+      <div class="cell" id="p259"></div>
+      <div class="cell" id="p260"></div>
+      <div class="cell" id="p261"></div>
+      <div class="cell" id="p262"></div>
+      <div class="cell" id="p263"></div>
+      <div class="cell" id="p264"></div>
+      <div class="cell" id="p265"></div>
+      <div class="cell" id="p266"></div>
+      <div class="cell" id="p267"></div>
+      <div class="cell" id="p268"></div>
     </div>
 
     <div style="grid-column: 28 / 29; background-color: violet;">
-      <div class="cell p269"></div>
-      <div class="cell p270"></div>
-      <div class="cell p271"></div>
-      <div class="cell p272"></div>
-      <div class="cell p273"></div>
-      <div class="cell p274"></div>
-      <div class="cell p275"></div>
-      <div class="cell p276"></div>
-      <div class="cell p277"></div>
-      <div class="cell p278"></div>
-      <div class="cell p279"></div>
+      <div class="cell" id="p269"></div>
+      <div class="cell" id="p270"></div>
+      <div class="cell" id="p271"></div>
+      <div class="cell" id="p272"></div>
+      <div class="cell" id="p273"></div>
+      <div class="cell" id="p274"></div>
+      <div class="cell" id="p275"></div>
+      <div class="cell" id="p276"></div>
+      <div class="cell" id="p277"></div>
+      <div class="cell" id="p278"></div>
+      <div class="cell" id="p279"></div>
     </div>
 
     <div style="grid-column: 29 / 30; background-color: violet;">
-      <div class="cell 280"></div>
-      <div class="cell p281"></div>
-      <div class="cell p282"></div>
-      <div class="cell p283"></div>
-      <div class="cell p284"></div>
-      <div class="cell p285"></div>
-      <div class="cell p286"></div>
-      <div class="cell p287"></div>
-      <div class="cell p288"></div>
-      <div class="cell p289"></div>
-      <div class="cell p290"></div>
+      <div class="cell" id="p280"></div>
+      <div class="cell" id="p281"></div>
+      <div class="cell" id="p282"></div>
+      <div class="cell" id="p283"></div>
+      <div class="cell" id="p284"></div>
+      <div class="cell" id="p285"></div>
+      <div class="cell" id="p286"></div>
+      <div class="cell" id="p287"></div>
+      <div class="cell" id="p288"></div>
+      <div class="cell" id="p289"></div>
+      <div class="cell" id="p290"></div>
     </div>
 
     <div style="grid-column: 30 / 31; background-color: violet;">
-      <div class="cell p291"></div>
-      <div class="cell p292"></div>
-      <div class="cell p293"></div>
-      <div class="cell p294"></div>
-      <div class="cell p295"></div>
-      <div class="cell p296"></div>
-      <div class="cell p297"></div>
-      <div class="cell p298"></div>
-      <div class="cell p299"></div>
-      <div class="cell p300"></div>
-      <div class="cell p301"></div>
+      <div class="cell" id="p291"></div>
+      <div class="cell" id="p292"></div>
+      <div class="cell" id="p293"></div>
+      <div class="cell" id="p294"></div>
+      <div class="cell" id="p295"></div>
+      <div class="cell" id="p296"></div>
+      <div class="cell" id="p297"></div>
+      <div class="cell" id="p298"></div>
+      <div class="cell" id="p299"></div>
+      <div class="cell" id="p300"></div>
+      <div class="cell" id="p301"></div>
     </div>
 
     <div style="grid-column: 31 / 32; background-color: purple;">
-      <div class="cell p302"></div>
-      <div class="cell p303"></div>
-      <div class="cell p304"></div>
-      <div class="cell p305"></div>
-      <div class="cell p306"></div>
-      <div class="cell p307"></div>
-      <div class="cell p308"></div>
-      <div class="cell p309"></div>
-      <div class="cell p310"></div>
-      <div class="cell p311"></div>
-      <div class="cell p312"></div>
+      <div class="cell" id="p302"></div>
+      <div class="cell" id="p303"></div>
+      <div class="cell" id="p304"></div>
+      <div class="cell" id="p305"></div>
+      <div class="cell" id="p306"></div>
+      <div class="cell" id="p307"></div>
+      <div class="cell" id="p308"></div>
+      <div class="cell" id="p309"></div>
+      <div class="cell" id="p310"></div>
+      <div class="cell" id="p311"></div>
+      <div class="cell" id="p312"></div>
     </div>
 
     <div style="grid-column: 32 / 33; background-color: purple;">
-      <div class="cell p313"></div>
-      <div class="cell p314"></div>
-      <div class="cell p315"></div>
-      <div class="cell p316"></div>
-      <div class="cell p317"></div>
-      <div class="cell p318"></div>
-      <div class="cell p319"></div>
-      <div class="cell p310"></div>
-      <div class="cell p311"></div>
-      <div class="cell p312"></div>
-      <div class="cell p313"></div>
+      <div class="cell" id="p313"></div>
+      <div class="cell" id="p314"></div>
+      <div class="cell" id="p315"></div>
+      <div class="cell" id="p316"></div>
+      <div class="cell" id="p317"></div>
+      <div class="cell" id="p318"></div>
+      <div class="cell" id="p319"></div>
+      <div class="cell" id="p310"></div>
+      <div class="cell" id="p311"></div>
+      <div class="cell" id="p312"></div>
+      <div class="cell" id="p313"></div>
     </div>
 
     <div style="grid-column: 33 / 34; background-color: purple;">
-      <div class="cell p314"></div>
-      <div class="cell p315"></div>
-      <div class="cell p316"></div>
-      <div class="cell p317"></div>
-      <div class="cell p318"></div>
-      <div class="cell p319"></div>
-      <div class="cell p320"></div>
-      <div class="cell p321"></div>
-      <div class="cell p322"></div>
-      <div class="cell p323"></div>
-      <div class="cell p324"></div>
+      <div class="cell" id="p314"></div>
+      <div class="cell" id="p315"></div>
+      <div class="cell" id="p316"></div>
+      <div class="cell" id="p317"></div>
+      <div class="cell" id="p318"></div>
+      <div class="cell" id="p319"></div>
+      <div class="cell" id="p320"></div>
+      <div class="cell" id="p321"></div>
+      <div class="cell" id="p322"></div>
+      <div class="cell" id="p323"></div>
+      <div class="cell" id="p324"></div>
     </div>
 
     <div style="grid-column: 34 / 35; background-color: indigo;">
-      <div class="cell p325"></div>
-      <div class="cell p326"></div>
-      <div class="cell p327"></div>
-      <div class="cell p328"></div>
-      <div class="cell p329"></div>
-      <div class="cell p330"></div>
-      <div class="cell p331"></div>
-      <div class="cell p332"></div>
-      <div class="cell p333"></div>
-      <div class="cell p334"></div>
-      <div class="cell p335"></div>
+      <div class="cell" id="p325"></div>
+      <div class="cell" id="p326"></div>
+      <div class="cell" id="p327"></div>
+      <div class="cell" id="p328"></div>
+      <div class="cell" id="p329"></div>
+      <div class="cell" id="p330"></div>
+      <div class="cell" id="p331"></div>
+      <div class="cell" id="p332"></div>
+      <div class="cell" id="p333"></div>
+      <div class="cell" id="p334"></div>
+      <div class="cell" id="p335"></div>
     </div>
 
     <div style="grid-column: 35 / 36;; background-color: indigo;">
-      <div class="cell p336"></div>
-      <div class="cell p337"></div>
-      <div class="cell p338"></div>
-      <div class="cell p339"></div>
-      <div class="cell p340"></div>
-      <div class="cell p341"></div>
-      <div class="cell p342"></div>
-      <div class="cell p343"></div>
-      <div class="cell p344"></div>
-      <div class="cell p345"></div>
-      <div class="cell p346"></div>
+      <div class="cell" id="p336"></div>
+      <div class="cell" id="p337"></div>
+      <div class="cell" id="p338"></div>
+      <div class="cell" id="p339"></div>
+      <div class="cell" id="p340"></div>
+      <div class="cell" id="p341"></div>
+      <div class="cell" id="p342"></div>
+      <div class="cell" id="p343"></div>
+      <div class="cell" id="p344"></div>
+      <div class="cell" id="p345"></div>
+      <div class="cell" id="p346"></div>
     </div>
 
     <div style="grid-column: 36 / 37;; background-color: indigo;">
-      <div class="cell p347"></div>
-      <div class="cell p348"></div>
-      <div class="cell p349"></div>
-      <div class="cell p350"></div>
-      <div class="cell p351"></div>
-      <div class="cell p352"></div>
-      <div class="cell p353"></div>
-      <div class="cell p354"></div>
-      <div class="cell p355"></div>
-      <div class="cell p356"></div>
-      <div class="cell p357"></div>
+      <div class="cell" id="p347"></div>
+      <div class="cell" id="p348"></div>
+      <div class="cell" id="p349"></div>
+      <div class="cell" id="p350"></div>
+      <div class="cell" id="p351"></div>
+      <div class="cell" id="p352"></div>
+      <div class="cell" id="p353"></div>
+      <div class="cell" id="p354"></div>
+      <div class="cell" id="p355"></div>
+      <div class="cell" id="p356"></div>
+      <div class="cell" id="p357"></div>
     </div>
-
+    </div>
+    <div class="purchase-section">
+      <h2 id="cell-name" style="text-align: center"></h2>
+      <form>
+	<label for="fname">Name:</label><br>
+	<input type="text" id="name" name="fname" required><br>
+	<label for="lname">Last name:</label><br>
+	<input type="text" id="lname" name="lname">
+      </form>
+    </div>
   </body>
+  <script src="script.js"></script>
 </html>
