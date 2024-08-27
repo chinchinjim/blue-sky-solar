@@ -1,4 +1,14 @@
+//import "@melloware/coloris/dist/coloris.css";
+//import Coloris from "@melloware/coloris";
+
+
 import { initializeApp } from 'firebase/app';
+
+//Coloris.init();
+//Coloris({el: "#coloris",
+//	alpha: false});
+
+
 //import { getDatabase } from "https://www.gstatic.com/firebasejs/10.13.0/firebase-database.js";
 
 const firebaseConfig = {
@@ -14,6 +24,8 @@ const firebaseConfig = {
 initializeApp(firebaseConfig);
 
 //const database = getDatabase();
+
+document.getElementsByClassName("outer")[0].addEventListener('click', tileClicked);
 
 var clickedTile = document.getElementById("p1");
 /*1
@@ -35,7 +47,7 @@ function tileClicked(event) {
 	document.getElementById("cell-name").innerHTML = "Cell #" + clickedTile.id.substring(1);
 }
 
-window.tileClicked = tileClicked;
+//window.tileClicked = tileClicked;
 
 /*
 function lightenTile(style) {
