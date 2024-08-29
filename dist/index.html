@@ -7,7 +7,12 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/mdbassit/Coloris@latest/dist/coloris.min.css"/>
-  <!--<script src="https://cdn.jsdelivr.net/gh/mdbassit/Coloris@latest/dist/coloris.min.js" type="module"></script>-->
+  <script src="https://cdn.jsdelivr.net/gh/mdbassit/Coloris@latest/dist/coloris.min.js"></script>
+  <script>
+    Coloris({
+      alpha: false
+    });
+  </script>
   <body>
     <h1 style="text-align: center">Select a tile!</h1>
     <div class="outer">
@@ -489,14 +494,14 @@
     </div>
     <div class="purchase-section">
       <h2 id="cell-name" style="text-align: center"></h2>
-      <div class="form">
+      <div id="adopt-form">
 	<label for="name">Name: </label>
-	<input type="text" id="name" name="Name" required><br>
-	<label for="lname">Message: </label>
-	<input type="text" id="lname" name="Message"><br>
+	<input type="text" name="name" required><br>
+	<label for="message">Message: </label>
+	<input type="text" name="message"><br>
 	<label for="color">Color: </label>
-	<input type="text" id="color" data-coloris><br>
-	<button onclick="addCell">Submit</button>
+	<input type="text" name="color" data-coloris><br>
+	<button id="adopt-form-submit">Submit</button>
       </div>
     </div>
   </body>

@@ -15,7 +15,6 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
-    "@melloware/coloris": "^0.24.0",
     "firebase": "^10.13.0"
   }
 }
