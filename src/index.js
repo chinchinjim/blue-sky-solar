@@ -22,10 +22,12 @@ const database = getDatabase();
 
 const cellRef = ref(database, "/cells");
 
+var cachedCells = {};
+
 onChildAdded(cellRef, (cellData) => {
-	const d = cellData.val();
-	document.getElementById(d.cell).style.backgroundColor = d.color;
-	console.log(d.cell + ", " + d.color);
+	let val = cellData.val();
+	cachedCells[val["cell"]] = {"name": val["name"], "message": val["message"], "color": val["color"]}
+	document.getElementById(val.cell).style.backgroundColor = val.color;
 });
 
 var clickedTile = document.getElementById("p1");
@@ -33,14 +35,22 @@ var clickedTile = document.getElementById("p1");
 document.getElementsByClassName("outer")[0].onclick = (event) => {
 	//clickedTile = document.getElementById("p1");
 	//console.log(clickedTile);
-	clickedTile.style.backgroundColor = null;
+	clickedTile.style.backgroundColor = clickedTile.style.backgroundColor == "white" ? "" : clickedTile.style.backgroundColor;
 	clickedTile.style.transform = 'scale(1)';
 
 	clickedTile = event.target.className == "cell" ? event.target : clickedTile;
 	
-	clickedTile.style.backgroundColor = "white";
+	clickedTile.style.backgroundColor = clickedTile.style.backgroundColor == "" ? "white": clickedTile.style.backgroundColor;
 	clickedTile.style.transform = 'scale(1.2)';
-	document.getElementById("cell-name").innerHTML = "Cell #" + clickedTile.id.substring(1);
+	document.getElementById("cell-id").innerHTML = "Cell #" + clickedTile.id.substring(1);
+
+	if(clickedTile.id in cachedCells) {
+		document.getElementById("cell-name").innerHTML = cachedCells[clickedTile.id]["name"];
+		document.getElementById("cell-message").innerHTML = cachedCells[clickedTile.id]["message"];
+	} else {
+		document.getElementById("cell-name").innerHTML = "";
+		document.getElementById("cell-message").innerHTML = "";
+	}
 };
 
 document.getElementById("adopt-form-submit").onclick = async () => {
