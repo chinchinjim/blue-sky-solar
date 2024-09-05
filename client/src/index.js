@@ -1,6 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getFunctions, httpsCallable } from "firebase/functions";
-import { getDatabase, ref, onChildAdded, get, query, orderByChild, equalTo } from 'firebase/database';
+import { getDatabase, ref, onChildAdded } from 'firebase/database';
 
 const firebaseConfig = {
   apiKey: "AIzaSyAegBd_qulAcOvbIbjOeQtyzQw5dygKEX4",
@@ -81,11 +81,7 @@ document.getElementById("adopt-form-submit").onclick = () => {
 
 	// Post info over to backend to write to database
 	const adoptCell = httpsCallable(functions, 'adopt_cell');
-	adoptCell(cellData).then((res) => {
-		// Cell is adopted already if response isn't "Success"
-		if(res.data != "Success") {
-			alert(res.data);
-		}
-	});
+	adoptCell(cellData).catch((error) => { alert(error.message) });
+
 };
 
