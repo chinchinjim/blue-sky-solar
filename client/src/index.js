@@ -3,13 +3,12 @@ import { getFunctions, httpsCallable } from "firebase/functions";
 import { getDatabase, ref, onChildAdded } from 'firebase/database';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAegBd_qulAcOvbIbjOeQtyzQw5dygKEX4",
-  authDomain: "solartest-7875a.firebaseapp.com",
-  databaseURL: "https://solartest-7875a-default-rtdb.firebaseio.com",
-  projectId: "solartest-7875a",
-  storageBucket: "solartest-7875a.appspot.com",
-  messagingSenderId: "510830787909",
-  appId: "1:510830787909:web:05406f7adb94f069ded22c"
+  apiKey: "AIzaSyCKhoQUDrOtTKLqBG_M0djp8PaD-PIWR3A",
+  authDomain: "blueskysolar-bb44f.firebaseapp.com",
+  projectId: "blueskysolar-bb44f",
+  storageBucket: "blueskysolar-bb44f.appspot.com",
+  messagingSenderId: "686381594188",
+  appId: "1:686381594188:web:2be6c76dc1bb300175e6e9"
 };
 
 const app = initializeApp(firebaseConfig);
