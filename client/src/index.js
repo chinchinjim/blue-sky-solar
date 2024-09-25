@@ -20,8 +20,9 @@ const cellRef = ref(database, "/cells");
 
 var cachedCells = {};
 
-// Holds currently selected tile
-var clickedTile = document.getElementsByClassName("outer")[0];
+// Holds currently selected cell
+var clickedCell = document.getElementsByClassName("outer")[0];
+var selectedCells = [];
 
 // Event listener - Listens to added cells and updates realtime
 onChildAdded(cellRef, (cellData) => {
@@ -31,7 +32,7 @@ onChildAdded(cellRef, (cellData) => {
 	cachedCells[val["cell"]] = {"name": val["name"], "message": val["message"], "color": val["color"]}
 	//Update color of the cell
 	document.getElementById(val.cell).style.backgroundColor = val["color"];
-	if(clickedTile.id == val.cell) {
+	if(clickedCell.id == val.cell) {
 		document.getElementById("cell-name").innerHTML = val["name"];
 		document.getElementById("cell-message").innerHTML = val["message"];
 	}
@@ -40,47 +41,81 @@ onChildAdded(cellRef, (cellData) => {
 // Tile selector
 document.getElementsByClassName("outer")[0].onclick = (event) => {
 
-	//Check cache to see if cell is adopted
-	let adopted = clickedTile.id in cachedCells;
+	//Check cache to see if cells are adopted
+	let clickedAdopted;
+	let adopted = selectedCells.map((cell) => cell.id in cachedCells);
 
-	// Previously selected tile is set back to normal
-	clickedTile.style.backgroundColor = adopted? clickedTile.style.backgroundColor : "";
-	clickedTile.style.transform = 'scale(1)';
-
-	// Selects a new tile if the target element clicked is a tile
-	clickedTile = event.target.className == "cell" ? event.target : clickedTile;
-
-	adopted = clickedTile.id in cachedCells;
-	
-	// Modifies the selected cell to show user it is selected
-	clickedTile.style.backgroundColor = adopted? clickedTile.style.backgroundColor : "white";
-	clickedTile.style.transform = 'scale(1.2)';
-
-	// Updates text fields with cell information 
-	document.getElementById("cell-id").innerHTML = "Cell #" + clickedTile.id.substring(1);
-	
-	if(adopted) {
-		document.getElementById("cell-name").innerHTML = cachedCells[clickedTile.id]["name"];
-		document.getElementById("cell-message").innerHTML = cachedCells[clickedTile.id]["message"];
-	} else {
-		document.getElementById("cell-name").innerHTML = "";
-		document.getElementById("cell-message").innerHTML = "";
+	// Only clear old selection when not multi select
+	if (!event.ctrlKey) {
+		// Previously selected cell is set back to normal
+		for (let i = 0; i < selectedCells.length; i++) {
+			selectedCells[i].style.backgroundColor = adopted[i] ? selectedCells[i].style.backgroundColor : "";
+			selectedCells[i].style.transform = 'scale(1)';
+		}
+		selectedCells = [];
 	}
+
+	// Selects a new cell if the target element clicked is a cell
+	clickedCell = event.target.className == "cell" ? event.target : clickedCell;
+
+	// Check for if clicked cell is adopted
+	clickedAdopted = clickedCell.id in cachedCells;
+
+	// Show cell info when selecting one cell
+	if(!event.ctrlKey) {
+		
+		// Modifies the selected cell to show user it is selected
+		clickedCell.style.backgroundColor = clickedAdopted ? clickedCell.style.backgroundColor : "white";
+		clickedCell.style.transform = 'scale(1.2)';
+
+		selectedCells.push(clickedCell);
+
+		// Updates text fields with cell info 
+		document.getElementById("cell-name").innerHTML = clickedAdopted ? cachedCells[clickedCell.id]["name"] : "";
+		document.getElementById("cell-message").innerHTML = clickedAdopted ? cachedCells[clickedCell.id]["message"] : "";
+		document.getElementById("cell-id").innerHTML = "Cell #" + clickedCell.id.substring(1);
+		
+		return;
+ 	}
+
+	// Multiselect - adopted cells and already selected can't be selected
+	if (!adopted.every((cell) => !cell) || clickedAdopted) return;
+
+	// Find if any cell that has been selected is the same as the clicked cell
+	let deselected = selectedCells.filter((cell) => cell.id === clickedCell.id);
+
+	if (deselected.length > 0) {
+		// Set to normal
+		deselected[0].style.backgroundColor = "";
+		deselected[0].style.transform = 'scale(1)';
+		// Remove from selection
+		selectedCells = selectedCells.filter((cell) => cell.id !== clickedCell.id)
+	} else {
+		// Modifies the selected cell to show user it is selected
+		clickedCell.style.backgroundColor = "white";
+		clickedCell.style.transform = 'scale(1.2)';
+		// Add to selection
+		selectedCells.push(clickedCell);
+	}
+	document.getElementById("cell-id").innerHTML = (selectedCells.length) + " cells selected";
 }
 
 // Adoption form
 // TODO - Integrate payment stuff 
 document.getElementById("adopt-form-submit").onclick = () => {
+
+	let userInput = {};
 	// Takes user input and cell id to make JSON object
-	var cellData = {"cell": clickedTile.id};
 	for (const input of document.getElementById("adopt-form").querySelectorAll('input')) {
-		cellData[input.name] = input.value;
+		userInput[input.name] = input.value;
 		input.value = "";
 	}
 
+	let cellList = selectedCells.map((cell) => Object.assign({"cell": cell.id}, userInput));
+
 	// Post info over to backend to write to database
 	const adoptCell = httpsCallable(functions, 'adopt_cell');
-	adoptCell(cellData).catch((error) => { alert(error.message) });
+	adoptCell(cellList).catch((error) => { alert(error.message) });
 
 };
 

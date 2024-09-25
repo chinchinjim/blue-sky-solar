@@ -14,7 +14,6 @@ const stripe = require("stripe")(process.env.STRIPE_SECRET);
 
 admin.initializeApp();
 
-
 // const logger = require("firebase-functions/logger");
 
 // const { defineSecret } = require('firebase-functions/params');
@@ -40,22 +39,30 @@ exports.new_payment_intent = onCall({cors: "*"},
       // res.send({clientSecret: paymentIntent.client_secret});
       return {clientSecret: paymentIntent.client_secret};
     });
-
+// REQUIRED: SNAPSHOT NEEDS TO CHANGE TO ACCOMDATE LIST
 exports.adopt_cell = onCall({cors: "*"},
     async (req) => {
-      // console.log(req.data);
-
       const ref = admin.database().ref("/cells");
-      const snapshot = await ref
-          .orderByChild("cell").equalTo(req.data.cell).once("value");
+      const queryPromises = await req.data.map((item) => {
+        return ref.orderByChild("cell").equalTo(item.cell).once("value");
+      });
 
-      if (snapshot.exists()) {
-        log(snapshot.val());
-        throw new HttpsError("already-exists", "Cell already exists");
-      }
-      return admin.database().ref("/cells").push(req.data).then(() => {
-        // Returning the sanitized message to the client.
-        return "Success";
+      return Promise.all(queryPromises).then((snapshots) => {
+        snapshots.forEach((snapshot) => {
+          if (snapshot.exists()) {
+            log(snapshot.val());
+            throw new HttpsError("already-exists", "Cell already exists");
+          }
+        });
+
+        const pushPromises = req.data.map((item) => {
+          return admin.database().ref("/cells").push(item);
+        });
+
+        return Promise.all(pushPromises).then(() => {
+          // Returning the success message after all data has been pushed.
+          return "Success";
+        });
       });
     });
 
